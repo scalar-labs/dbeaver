@@ -272,6 +272,9 @@ public abstract class JDBCDataSource extends AbstractDataSource
                 }
             };
 
+            ClassLoader originalClassLoader = Thread.currentThread().getContextClassLoader();
+            Thread.currentThread().setContextClassLoader(driver.getClassLoader());
+
             boolean openTaskFinished;
             try {
                 if (openTimeout <= 0) {
@@ -283,6 +286,8 @@ public abstract class JDBCDataSource extends AbstractDataSource
             } finally {
                 authModel.endAuthentication(container, connectionInfo, connectProps);
             }
+
+            Thread.currentThread().setContextClassLoader(originalClassLoader);
 
             if (error[0] != null) {
                 throw error[0];
