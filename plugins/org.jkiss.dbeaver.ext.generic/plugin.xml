@@ -1723,6 +1723,23 @@
                         webURL="http://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html"
                         categories="sql,analytic,cloud"/>
 
+                <!-- ScalarDB -->
+                <driver
+                        id="scalardb"
+                        label="ScalarDB"
+                        class="com.scalar.db.Driver"
+                        icon="icons/scalardb_icon.png"
+                        iconBig="icons/scalardb_icon_big.png"
+                        sampleURL="jdbc:scalardb:{host}"
+                        useURL="true"
+                        defaultHost="/etc/scalardb.properties"
+                        defaultPort=""
+                        description="ScalarDB JDBC driver"
+                        webURL="https://scalardb.scalar-labs.com/docs/latest/scalardb-sql/jdbc-guide/">
+                    <file type="jar" path="maven:/com.scalar-labs:scalardb-sql-jdbc:4.0.0-SNAPSHOT" bundle="!drivers.scalardb"/>
+                    <file type="jar" path="drivers/scalardb" bundle="drivers.scalardb"/>
+                </driver>
+
             </drivers>
 
         </datasource>
