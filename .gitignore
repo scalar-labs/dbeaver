@@ -60,3 +60,6 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+
+# ScalarDB migration documentation
+docs/scalardb-3.17.1-migration-errors-and-fixes.md

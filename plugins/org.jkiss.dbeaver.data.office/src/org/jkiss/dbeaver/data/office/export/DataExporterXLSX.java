@@ -543,7 +543,8 @@ public class DataExporterXLSX extends StreamExporterAbstract implements IAppenda
 
             if (bg != null) {
                 // Setting the foreground color sets the background color. Is this a bug/feature of POI?
-                final XSSFCellStyle style = (XSSFCellStyle) this.style.clone();
+                final XSSFCellStyle style = (XSSFCellStyle) wb.createCellStyle();
+                style.cloneStyleFrom(this.style);
                 style.setFillForegroundColor(new XSSFColor(asColor(bg), new DefaultIndexedColorMap()));
                 style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 

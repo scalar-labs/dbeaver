@@ -1736,7 +1736,9 @@
                         defaultPort=""
                         description="ScalarDB JDBC driver"
                         webURL="https://scalardb.scalar-labs.com/docs/latest/scalardb-sql/jdbc-guide/">
-                    <file type="jar" path="maven:/com.scalar-labs:scalardb-sql-jdbc:4.0.0-SNAPSHOT" bundle="!drivers.scalardb"/>
+                    <file type="jar" path="maven:/com.google.guava:guava:32.1.3-jre" bundle="!drivers.scalardb"/>
+                    <file type="jar" path="maven:/com.scalar-labs:scalardb-sql-jdbc:3.17.1" bundle="!drivers.scalardb"/>
+                    <file type="jar" path="maven:/com.scalar-labs:scalardb-cluster-java-client-sdk:3.17.1" bundle="!drivers.scalardb"/>
                     <file type="jar" path="drivers/scalardb" bundle="drivers.scalardb"/>
                 </driver>
 
