@@ -1371,6 +1371,25 @@
                     <parameter name="supports-select-count" value="true"/>
                 </driver>
 
+                <!-- ScalarDB -->
+                <driver
+                        id="scalardb"
+                        label="ScalarDB"
+                        class="com.scalar.db.Driver"
+                        icon="icons/scalardb_icon.png"
+                        iconBig="icons/scalardb_icon_big.png"
+                        sampleURL="jdbc:scalardb:{host}"
+                        useURL="true"
+                        defaultHost="/etc/scalardb.properties"
+                        defaultPort=""
+                        description="ScalarDB JDBC driver"
+                        webURL="https://scalardb.scalar-labs.com/docs/latest/scalardb-sql/jdbc-guide/"
+                        promoted="1">
+                    <file type="jar" path="maven:/com.scalar-labs:scalardb-sql-jdbc:3.17.1" bundle="!drivers.scalardb"/>
+                    <file type="jar" path="maven:/com.scalar-labs:scalardb-cluster-java-client-sdk:3.17.1" bundle="!drivers.scalardb"/>
+                    <file type="jar" path="drivers/scalardb" bundle="drivers.scalardb"/>
+                </driver>
+
                 <!--
                 Deprecated drivers.
                 These drivers are replaced in specific extensions.
