@@ -1,5 +1,5 @@
 set "scriptDir=%~dp0"
 set "workspaceDir=%scriptDir%..\.."
-IF NOT EXIST "%workspaceDir%\dbeaver-common" git clone https://github.com/dbeaver/dbeaver-common.git "%workspaceDir%\dbeaver-common"
+IF NOT EXIST "%workspaceDir%\dbeaver-common" git clone -b main https://github.com/scalar-labs/dbeaver-common.git "%workspaceDir%\dbeaver-common"
 IF NOT EXIST "%workspaceDir%\dbeaver-jdbc-libsql" git clone https://github.com/dbeaver/dbeaver-jdbc-libsql.git "%workspaceDir%\dbeaver-jdbc-libsql"
 call "%workspaceDir%\dbeaver-common\mvnw.cmd" clean package -Pproduct-dbeaver-ce,product-dbeaver-eclipse-ce,appstore -T 1C -f "%workspaceDir%\dbeaver\product\aggregate"

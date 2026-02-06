@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build-java:
-    uses: dbeaver/dbeaver-common/.github/workflows/mvn-package.yml@devel
+    uses: scalar-labs/dbeaver-common/.github/workflows/mvn-package.yml@main
     name: Build
     secrets: inherit
     with:
@@ -26,5 +26,5 @@ jobs:
 
   lint-java:
     name: Check style
-    uses: dbeaver/dbeaver-common/.github/workflows/java-checkstyle.yml@devel
+    uses: scalar-labs/dbeaver-common/.github/workflows/java-checkstyle.yml@main
     secrets: inherit

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+
+    <extension point="org.jkiss.dbeaver.generic.meta">
+        <meta id="scalardb" class="org.jkiss.dbeaver.ext.scalardb.model.ScalarDBMetaModel"
+              driverClass="com.scalar.db.Driver"/>
+    </extension>
+
+    <extension point="org.jkiss.dbeaver.dataSourceProvider">
+        <datasource
+                class="org.jkiss.dbeaver.ext.scalardb.model.ScalarDBDataSourceProvider"
+                description="ScalarDB"
+                id="scalardb"
+                parent="generic"
+                label="ScalarDB"
+                icon="icons/scalardb_icon.png"
+                dialect="generic">
+
+            <drivers managable="true">
+                <driver
+                        id="scalardb"
+                        label="ScalarDB"
+                        class="com.scalar.db.Driver"
+                        icon="icons/scalardb_icon.png"
+                        iconBig="icons/scalardb_icon_big.png"
+                        sampleURL="jdbc:scalardb:{host}"
+                        useURL="true"
+                        defaultHost="/etc/scalardb.properties"
+                        defaultPort=""
+                        description="ScalarDB JDBC driver"
+                        webURL="https://scalardb.scalar-labs.com/docs/latest/scalardb-sql/jdbc-guide/"
+                        promoted="1"
+                        categories="sql">
+                    <file type="jar" path="maven:/com.scalar-labs:scalardb-sql-jdbc:3.17.1" bundle="!drivers.scalardb"/>
+                    <file type="jar" path="maven:/com.scalar-labs:scalardb-cluster-java-client-sdk:3.17.1" bundle="!drivers.scalardb"/>
+                    <file type="jar" path="drivers/scalardb" bundle="drivers.scalardb"/>
+
+                    <parameter name="supports-references" value="true"/>
+                    <parameter name="supports-indexes" value="true"/>
+                    <parameter name="supports-stored-code" value="false"/>
+                    <parameter name="supports-truncate" value="false"/>
+                </driver>
+            </drivers>
+        </datasource>
+    </extension>
+
+    <extension point="org.jkiss.dbeaver.dataTypeProvider">
+        <provider
+                class="org.jkiss.dbeaver.ext.scalardb.model.data.ScalarDBValueHandlerProvider"
+                description="ScalarDB data types provider"
+                id="ScalarDBValueHandlerProvider"
+                parent="GenericValueHandlerProvider"
+                label="ScalarDB data types provider">
+
+            <datasource id="scalardb"/>
+            <type kind="DATETIME"/>
+        </provider>
+    </extension>
+
+</plugin>
