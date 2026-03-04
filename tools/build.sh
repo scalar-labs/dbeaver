@@ -62,7 +62,7 @@ fi
 # Clone or verify dbeaver-common repository
 if [ ! -d "$DBEAVER_COMMON_DIR" ]; then
     log "Cloning dbeaver-common repository..."
-    git clone https://github.com/dbeaver/dbeaver-common.git "$DBEAVER_COMMON_DIR"
+    git clone -b main https://github.com/scalar-labs/dbeaver-common.git "$DBEAVER_COMMON_DIR"
 else
     log "DBeaver common directory already exists at $DBEAVER_COMMON_DIR"
 fi

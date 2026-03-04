@@ -68,6 +68,7 @@
 
         <module>org.jkiss.dbeaver.ext.postgresql</module>
 
+        <module>org.jkiss.dbeaver.ext.scalardb</module>
         <module>org.jkiss.dbeaver.ext.snowflake</module>
         <module>org.jkiss.dbeaver.ext.spanner</module>
         <module>org.jkiss.dbeaver.ext.sqlite</module>
